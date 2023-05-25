@@ -12,3 +12,5 @@ fun main(args: Array<String>) {
 private fun readInt() = readln().toInt() // single int
 private fun readStrings() = readln().split(" ") // list of strings
 private fun readInts() = readln().split(" ").map { it.toInt() } // list of ints
+
+//for (i in A.indices) {
