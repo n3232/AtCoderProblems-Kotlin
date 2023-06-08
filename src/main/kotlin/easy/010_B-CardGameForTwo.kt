@@ -3,11 +3,20 @@ package easy
 //https://atcoder.jp/contests/abc074/tasks/abc074_b
 fun main(args: Array<String>) {
     val n = readLine()!!.toInt()
-    val k = readLine()!!.toInt()
-    val X = readLine()!!.split(" ").map { it.toInt() }
+    val A = readLine()!!.split(" ").map { it.toInt() }
 
-    val ans = X.sumOf { minOf(it, k - it) * 2 }
-    println(ans)
+    val sortedA = A.sortedDescending()
+
+    var alice = 0
+    var bob = 0
+
+    for (i in 0 until n) {
+        if (i % 2 == 0) alice += sortedA[i]
+        else bob += sortedA[i]
+    }
+
+    println(alice - bob)
+
 }
 
 
