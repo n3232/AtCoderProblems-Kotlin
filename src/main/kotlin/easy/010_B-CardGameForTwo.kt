@@ -5,18 +5,11 @@ fun main(args: Array<String>) {
     val n = readLine()!!.toInt()
     val A = readLine()!!.split(" ").map { it.toInt() }
 
-    val sortedA = A.sortedDescending()
+    val alice = A.sortedDescending()
+        .mapIndexed { index, value -> if (index % 2 == 0) value else 0 }
+        .sum()
 
-    var alice = 0
-    var bob = 0
-
-    for (i in 0 until n) {
-        if (i % 2 == 0) alice += sortedA[i]
-        else bob += sortedA[i]
-    }
-
-    println(alice - bob)
-
+    println(alice - (A.sum() - alice))
 }
 
 
