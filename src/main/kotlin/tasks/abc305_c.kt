@@ -2,26 +2,16 @@ package tasks
 
 fun main(args: Array<String>) {
     val (h, w) = readLine()!!.split(" ").map { it.toInt() }
-    val sList = mutableListOf<String>()
-    for (i in 0 until h) {
-        sList.add(readLine()!!)
-    }
-
-    val list = sList.toMutableList()
-    // .だけの行を削除
-    // #でソート
+    val list = (1..h).map { readLine()!! }
     val filterSorted = list.filter { it.contains("#") }.sortedBy { it.count { char -> char == '#' } }
-
     val picker = filterSorted[0]
     val noPicker = filterSorted[1]
-
-    val ansI = sList.indexOf(picker) + 1
+    val ansI = list.indexOf(picker) + 1
     val ansJ = picker.zip(noPicker).indexOfFirst { it.first != it.second } + 1
-
     println("$ansI $ansJ")
-
 }
 
+//val map = (1..h).map { readLine()!! }
 
 private fun readStr() = readLine()!! // string line
 private fun readInt() = readLine()!!.toInt() // single int
