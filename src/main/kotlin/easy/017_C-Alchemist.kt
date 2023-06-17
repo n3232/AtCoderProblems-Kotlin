@@ -1,20 +1,18 @@
 package easy
 
-//https://atcoder.jp/contests/abc132/tasks/abc132_c
+//https://atcoder.jp/contests/abc138/submissions/me
 fun main(args: Array<String>) {
-    val n = readLine()!!.toInt()
-    val list = readLine()!!.split(" ").map { it.toInt() }.sorted()
-    val from = list[n / 2 - 1]
-    val to = list[n / 2]
-    val ans = to - from
+    readLine()!!.toInt()
+    val list = readLine()!!.split(" ").map { it.toDouble() }
+    val ans = list.sorted().reduce { acc, d -> (acc + d) / 2 }
     println(ans)
 }
 
 // tips
-//val s = readLine()!! // string line
-//val i = readLine()!!.toInt() // single int
-//val (a, b) = readLine()!!.split(" ") // list of strings
-//val (i, j) = readLine()!!.split(" ").map { it.toInt() } // list of ints
+//val stringLine = readLine()!!
+//val singleInt = readLine()!!.toInt()
+//val (s1, s2) = readLine()!!.split(" ")
+//val (i1, i2) = readLine()!!.split(" ").map { it.toInt() }
 
 //val list = (1..h).map { readLine()!! }
 //private fun stringList() = "abc".toList() // ["a", "b", "c"]
