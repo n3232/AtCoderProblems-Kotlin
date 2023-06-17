@@ -1,6 +1,6 @@
 package easy
 
-//https://atcoder.jp/contests/abc161/tasks/abc161_c
+//https://atcoder.jp/contests/abc132/tasks/abc132_c
 fun main(args: Array<String>) {
     val n = readLine()!!.toInt()
     val list = readLine()!!.split(" ").map { it.toInt() }.sorted()
