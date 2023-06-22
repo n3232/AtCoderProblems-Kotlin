@@ -1,22 +1,16 @@
 package easy
 
-//https://atcoder.jp/contests/abc094/submissions/35956766
+//https://atcoder.jp/contests/abc116/tasks/abc116_b
 fun main(args: Array<String>) {
-    val (n, m, x) = readLine()!!.split(" ").map { it.toInt() }
-    val inputList = readLine()!!.split(" ").map { it.toInt() }
-//    val list = (1..n).map { index ->
-//        if (inputList.contains(index)) 1 else 0
-//    }
-//    val ans = minOf(
-//        list.take(x - 1).sum(),
-//        list.drop(x - 1).sum()
-//    )
-    val ans = minOf(
-        inputList.take(x - 1).count { it <= m },
-        inputList.drop(x - 1).count { it <= m }
-    )
-
-    println(ans)
+    val s = readLine()!!.toInt()
+    var st = mutableSetOf<Int>()
+    var x = s
+    while (!st.contains(x)) {
+        st.add(x)
+        if (x % 2 == 0) x /= 2
+        else x = x * 3 + 1
+    }
+    println(st.count() + 1)
 }
 
 // tips
@@ -44,4 +38,4 @@ fun main(args: Array<String>) {
 //test case
 //https://www.dropbox.com/sh/nx3tnilzqz7df8a/AAAYlTq2tiEHl5hsESw6-yfLa?dl=0
 
-// oledesm、mellotron
+// oledesm、mellotron 
