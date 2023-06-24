@@ -12,14 +12,8 @@ fun main(args: Array<String>) {
     }
 }
 
-fun isPrime(x: Int): Boolean {
-    for (i in 2 until x) {
-        if (x % i == 0) {
-            return false
-        }
-    }
-    return true
-}
+fun isPrime(x: Int): Boolean = (2 until x).none { x % it == 0 }
+
 //val stringLine = readLine()!!
 //val singleInt = readLine()!!.toInt()
 //val (s1, s2) = readLine()!!.split(" ")
